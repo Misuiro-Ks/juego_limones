@@ -4,12 +4,17 @@ let ctx=canvas.getContext("2d");
 const ALTURA_SUELO=20;
 const ALTURA_PERSONAJE=60;
 const ANCHO_PERSONAJE=40;
-let personajeX=canvas.width/2;
+const ANCHO_LIMON=20;
+const ALTURA_LIMON=20;
 
+let personajeX=canvas.width/2;
+let limonX=canvas.width/2;
+let limonY=5;
 
 function iniciar(){
     DibujarSuelo();
     DibujarPersonaje();    
+    DibujarLimon();
 }
 
 function DibujarSuelo(){
@@ -24,19 +29,37 @@ function DibujarPersonaje(){
 
 function moverIzquierda(){
     personajeX=personajeX-10;
-    actualizarPantalla();
-    
+    actualizarPantalla();  
+}
+
+function moverDerecha(){
+    personajeX=personajeX+10;
+    actualizarPantalla();  
 }
 
 function actualizarPantalla(){
     limpiarCanva();
     DibujarSuelo();
     DibujarPersonaje();
+    DibujarLimon();
 }
 
 function limpiarCanva(){
     ctx.clearRect(0,0,canvas.width,canvas.height);
-    DibujarSuelo();
+    
 }
+
+function DibujarLimon(){
+    ctx.fillStyle="green";
+    ctx.fillRect(limonX,limonY,ANCHO_LIMON,ALTURA_LIMON);
+}
+
+function bajarLimon(){
+    limonY=limonY+10;
+    actualizarPantalla();
+    
+}
+
+
 
 
