@@ -122,6 +122,7 @@ if(limonY+ALTURA_LIMON>canvas.height-ALTURA_SUELO){
     
 if (vidas == 0){
     
+    clearInterval(intervalo);
     setTimeout(function(){
         alert("GAME OVER");
     }, 50);
