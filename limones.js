@@ -121,7 +121,7 @@ if(limonY+ALTURA_LIMON>canvas.height-ALTURA_SUELO){
     componente.textContent=vidas;
     
 if (vidas == 0){
-    
+
     clearInterval(intervalo);
     setTimeout(function(){
         alert("GAME OVER");
@@ -137,3 +137,13 @@ function aparecerLimon(){
     actualizarPantalla();
 }
 
+function Reiniciar(){
+    vidas=3;
+    puntaje=0;
+    velocidadCaida=200;
+    let componente=document.getElementById("txtVidas");
+    componente.textContent=vidas;
+    let componente2=document.getElementById("txtPuntaje");
+    componente2.textContent=puntaje;
+    iniciar();
+}
