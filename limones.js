@@ -14,11 +14,17 @@ let limonY=5;
 let puntaje=0;
 let vidas=3;
 let velocidadCaida=200;
+let intervalo;
+
 
 
 
 function iniciar(){
-    setInterval(bajarLimon,velocidadCaida);//primerParametro: Funcion segundoParametro: tiempo en milisegundos
+    
+    actualizarPantalla();
+
+    clearInterval(intervalo);
+    intervalo = setInterval(bajarLimon,velocidadCaida);//primerParametro: Funcion segundoParametro: tiempo en milisegundos
     DibujarSuelo();
     DibujarPersonaje();    
     aparecerLimon();
@@ -36,13 +42,13 @@ function DibujarPersonaje(){
     }
 
 function moverIzquierda(){
-    personajeX=personajeX-10;
+    personajeX=personajeX-15;
     actualizarPantalla();  
     
 }
 
 function moverDerecha(){
-    personajeX=personajeX+10;
+    personajeX=personajeX+15;
     actualizarPantalla();  
     
 }
@@ -83,9 +89,29 @@ function detectarAtrapado(){
         let componente=document.getElementById("txtPuntaje");
         componente.textContent=puntaje;
     
+        if(puntaje == 3){
+            velocidadCaida = 150;
+            clearInterval(intervalo);
+            intervalo = setInterval(bajarLimon, velocidadCaida);
+        }
+
+        if(puntaje == 6){
+            velocidadCaida = 100;
+            clearInterval(intervalo);
+            intervalo = setInterval(bajarLimon, velocidadCaida);
+        }
+
+        if(puntaje == 10){
+            
+            setTimeout(function(){
+            alert("¡TIENES LOS LIMONES, AHORA SOLO TE FALTA LA SAL Y EL TEQUILA!");
+            }, 50);
+        }
+
     }
-    
+
 }
+  
 
 function detectarPiso(){
 if(limonY+ALTURA_LIMON>canvas.height-ALTURA_SUELO){
