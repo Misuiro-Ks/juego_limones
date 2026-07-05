@@ -229,3 +229,37 @@ canvas{
 }
 
 }
+
+.logoEmpresa{
+
+    width:180px;
+
+    padding:15px;
+
+    border-radius:20px;
+
+    background:linear-gradient(180deg,#15345c,#0b203d);
+
+    border:3px solid #2ecc71;
+
+    box-shadow:
+        0 10px 25px rgba(0,0,0,.4),
+        0 0 20px rgba(46,204,113,.35);
+
+    text-align:center;
+
+}
+
+.logoEmpresa img{
+
+    width:140px;
+
+    transition:.3s;
+
+}
+
+.logoEmpresa img:hover{
+
+    transform:scale(1.05);
+
+}
