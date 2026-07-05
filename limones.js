@@ -2,10 +2,10 @@ let canvas=document.getElementById("areajuego");
 let ctx=canvas.getContext("2d");
 
 const ALTURA_SUELO=20;
-const ALTURA_PERSONAJE=60;
-const ANCHO_PERSONAJE=40;
 const ANCHO_LIMON=20;
 const ALTURA_LIMON=20;
+let ALTURA_PERSONAJE=50;
+let ANCHO_PERSONAJE=80;
 
 let personajeX=canvas.width/2;
 let personajeY=canvas.height-(ALTURA_SUELO+ALTURA_PERSONAJE);
@@ -15,8 +15,6 @@ let puntaje=0;
 let vidas=3;
 let velocidadCaida=200;
 let intervalo;
-
-
 
 
 function iniciar(){
@@ -37,7 +35,7 @@ function DibujarSuelo(){
     }
 
 function DibujarPersonaje(){
-    ctx.fillStyle="#e9ec12";
+    ctx.fillStyle="#5e12ec";
     ctx.fillRect(personajeX,personajeY,ANCHO_PERSONAJE,ALTURA_PERSONAJE);
     }
 
@@ -124,7 +122,7 @@ if (vidas == 0){
 
     clearInterval(intervalo);
     setTimeout(function(){
-        alert("GAME OVER");
+        alert("PERDISTE");
     }, 50);
 }
 }
@@ -146,4 +144,10 @@ function Reiniciar(){
     let componente2=document.getElementById("txtPuntaje");
     componente2.textContent=puntaje;
     iniciar();
+}
+
+function desaparecerPersonaje(){
+    ALTURA_PERSONAJE=0;
+    ANCHO_PERSONAJE=0;
+    ctx.clearRect(0,0,ANCHO_PERSONAJE,ALTURA_PERSONAJE);
 }
