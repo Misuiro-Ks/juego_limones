@@ -1,28 +1,73 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
 <head>
-  <title>Caza Estrellas</title>
-  <link rel="stylesheet" href="limones.css"/>
-  <script src="utils.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atrapar Limones</title>
 
+    <link rel="stylesheet" href="limones.css">
+    <script src="utils.js"></script>
 </head>
+
 <body onload="iniciar()">
-  <div class="contenedor">
-    <h1>Atrapar Limones</h1>
-    <p>Si del cielo te caen limones ..... </p>
-    <h2>Autor: Fabian Regalado</h2>
-    <canvas id="areajuego" width="600" height="400"></canvas>
-    <div class="panel">
-      <p>Puntaje: <span id="txtPuntaje">0</span></p>
-      <p>Vidas: <span id="txtVidas">3</span></p>
+
+    <div class="contenedor">
+
+        <div class="titulo">
+            <h1>🍋 Atrapar Limones 🍋</h1>
+            <p class="descripcion">
+                ¡Atrapa todos los limones antes de que caigan al suelo!
+            </p>
+            <p class="autor">
+                Desarrollado por <strong>Fabian Regalado</strong>
+            </p>
+        </div>
+
+        <div class="panel">
+
+            <div class="marcador">
+                <span class="icono">🏆</span>
+                <div>
+                    <small>PUNTAJE</small>
+                    <h2 id="txtPuntaje">0</h2>
+                </div>
+            </div>
+
+            <div class="marcador">
+                <span class="icono">❤️</span>
+                <div>
+                    <small>VIDAS</small>
+                    <h2 id="txtVidas">3</h2>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="juego">
+
+            <canvas id="areajuego" width="600" height="400"></canvas>
+
+        </div>
+
+        <div class="botones">
+
+            <button onclick="moverIzquierda()">
+                ⬅ Izquierda
+            </button>
+
+            <button onclick="Reiniciar()">
+                🔄 Reiniciar
+            </button>
+
+            <button onclick="moverDerecha()">
+                Derecha ➡
+            </button>
+
+        </div>
+
     </div>
-    <div class="botones">
-      <button onclick="moverIzquierda()">Izquierda</button>
-      <button onclick="moverDerecha()">Derecha</button>
-      <button onclick="Reiniciar()">Reiniciar</button>
-      
-    </div>
-  </div>
-  <script src="limones.js"></script>
+
+    <script src="limones.js"></script>
+
 </body>
 </html>
