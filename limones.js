@@ -139,6 +139,9 @@ function Reiniciar(){
     vidas=3;
     puntaje=0;
     velocidadCaida=200;
+    ANCHO_PERSONAJE=80;
+    ALTURA_PERSONAJE=50;
+    
     let componente=document.getElementById("txtVidas");
     componente.textContent=vidas;
     let componente2=document.getElementById("txtPuntaje");
